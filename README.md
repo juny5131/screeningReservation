@@ -134,7 +134,7 @@
 
 ## DDD 의 적용
 
-분석/설계 단계에서 도출된 MSA는 총 5개로 아래와 같다.
+분석/설계 단계에서 도출된 MSA는 총 4개로 아래와 같다.
 * MyPage 는 CQRS 를 위한 서비스
 
 | MSA | 기능 | port | 조회 API | Gateway 사용시 |
@@ -780,8 +780,8 @@ kubectl describe 명령으로 컨테이너에 configMap 적용여부를 알 수 
 
 
 ## 홍보팀의 추가
-    - KPI: 신규 고객의 유입률 증대와 기존 고객의 충성도 향상
-    - 구현계획 마이크로 서비스: 기존 customer 마이크로 서비스를 인수하며, 고객에 음식 및 맛집 추천 서비스 등을 제공할 예정
+    - KPI: 기존 병원의 유지율 향상 및 신규 병원 유치
+    - 구현계획 마이크로 서비스: 수집된 병원과 고객의 예약 정보를 활용하여, 신규 병원 홍보에 사용될 예정
 
 ## 이벤트 스토밍 
     ![image](https://user-images.githubusercontent.com/487999/79685356-2b729180-8273-11ea-9361-a434065f2249.png)
@@ -794,49 +794,4 @@ kubectl describe 명령으로 컨테이너에 configMap 적용여부를 알 수 
 ## 구현  
 
 기존의 마이크로 서비스에 수정을 발생시키지 않도록 Inbund 요청을 REST 가 아닌 Event 를 Subscribe 하는 방식으로 구현. 기존 마이크로 서비스에 대하여 아키텍처나 기존 마이크로 서비스들의 데이터베이스 구조와 관계없이 추가됨. 
-
-## 운영과 Retirement
-
-Request/Response 방식으로 구현하지 않았기 때문에 서비스가 더이상 불필요해져도 Deployment 에서 제거되면 기존 마이크로 서비스에 어떤 영향도 주지 않음.
-
-* [비교] 결제 (pay) 마이크로서비스의 경우 API 변화나 Retire 시에 app(주문) 마이크로 서비스의 변경을 초래함:
-
-예) API 변화시
-```
-# Order.java (Entity)
-
-    @PostPersist
-    public void onPostPersist(){
-
-        fooddelivery.external.결제이력 pay = new fooddelivery.external.결제이력();
-        pay.setOrderId(getOrderId());
-        
-        Application.applicationContext.getBean(fooddelivery.external.결제이력Service.class)
-                .결제(pay);
-
-                --> 
-
-        Application.applicationContext.getBean(fooddelivery.external.결제이력Service.class)
-                .결제2(pay);
-
-    }
-```
-
-예) Retire 시
-```
-# Order.java (Entity)
-
-    @PostPersist
-    public void onPostPersist(){
-
-        /**
-        fooddelivery.external.결제이력 pay = new fooddelivery.external.결제이력();
-        pay.setOrderId(getOrderId());
-        
-        Application.applicationContext.getBean(fooddelivery.external.결제이력Service.class)
-                .결제(pay);
-
-        **/
-    }
-```
 
