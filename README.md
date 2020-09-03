@@ -784,7 +784,7 @@ kubectl describe 명령으로 컨테이너에 configMap 적용여부를 알 수 
     - 구현계획 마이크로 서비스: 수집된 병원과 고객의 예약 정보를 활용하여, 신규 병원 홍보에 사용될 예정
 
 ## 이벤트 스토밍 
-![스토밍](https://user-images.githubusercontent.com/67447263/92063997-77177900-edd7-11ea-8b9c-2183fbe70975.png)
+![이미지](https://user-images.githubusercontent.com/67447263/92064246-13418000-edd8-11ea-94b3-c35ff1e7ca10.PNG)
 
 
 ## 헥사고날 아키텍처 변화 
