@@ -776,7 +776,7 @@ kubectl describe 명령으로 컨테이너에 configMap 적용여부를 알 수 
 
 # 신규 개발 조직의 추가
 
-  ![image](https://user-images.githubusercontent.com/487999/79684133-1d6c4300-826a-11ea-94a2-602e61814ebf.png)
+  ![조직](https://user-images.githubusercontent.com/67447263/92062810-8c3ed880-edd4-11ea-9eab-0ca58aa7bb32.png)
 
 
 ## 홍보팀의 추가
@@ -784,12 +784,12 @@ kubectl describe 명령으로 컨테이너에 configMap 적용여부를 알 수 
     - 구현계획 마이크로 서비스: 수집된 병원과 고객의 예약 정보를 활용하여, 신규 병원 홍보에 사용될 예정
 
 ## 이벤트 스토밍 
-    ![image](https://user-images.githubusercontent.com/487999/79685356-2b729180-8273-11ea-9361-a434065f2249.png)
+![아키](https://user-images.githubusercontent.com/67447263/92063064-30288400-edd5-11ea-9688-f2a52212bdf3.png)
 
 
 ## 헥사고날 아키텍처 변화 
 
-![image](https://user-images.githubusercontent.com/487999/79685243-1d704100-8272-11ea-8ef6-f4869c509996.png)
+![아키](https://user-images.githubusercontent.com/67447263/92063064-30288400-edd5-11ea-9688-f2a52212bdf3.png)
 
 ## 구현  
 
